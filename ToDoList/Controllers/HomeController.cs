@@ -10,5 +10,10 @@ namespace ToDoList.Controllers
     {
       return View();
     }
+    [HttpGet("/todolist_photos")]
+    public ActionResult ToDoListPhotos()
+    {
+      return View();
+    }
   }
 }
