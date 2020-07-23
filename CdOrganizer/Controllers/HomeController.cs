@@ -10,8 +10,8 @@ namespace CdOrganizer.Controllers
     {
       return View();
     }
-    [HttpGet("/todolist_photos")]
-    public ActionResult ToDoListPhotos()
+    [HttpGet("/albumcoverart_photos")]
+    public ActionResult AlbumCoverArtPhotos()
     {
       return View();
     }

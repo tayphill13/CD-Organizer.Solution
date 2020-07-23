@@ -7,28 +7,28 @@ namespace CdOrganizer.Controllers
   public class SongsController : Controller
   {
 
-    [HttpGet("/categories/{categoryId}/items/new")]
-    public ActionResult New(int categoryId)
+    [HttpGet("/records/{recordId}/songs/new")]
+    public ActionResult New(int recordId)
     {
-      Category category = Category.Find(categoryId);
-      return View(category);
+      Record record = Record.Find(RecordId);
+      return View(record);
     }
 
-    [HttpGet("/categories/{categoryId}/items/{itemId}")]
-    public ActionResult Show(int categoryId, int itemId)
+    [HttpGet("/records/{recordId}/songs/{songId}")]
+    public ActionResult Show(int recordId, int songId)
     {
-      Item item = Item.Find(itemId);
-      Category category = Category.Find(categoryId);
+      Song song = Song.Find(song);
+      Record record = Record.Find(recordId);
       Dictionary<string, object> model = new Dictionary<string, object>();
-      model.Add("item", item);
-      model.Add("category", category);
+      model.Add("song", song);
+      model.Add("record", record);
       return View(model);
     }
 
-    [HttpPost("/items/delete")]
+    [HttpPost("/songs/delete")]
     public ActionResult DeleteAll()
     {
-      Item.ClearAll();
+      Song.ClearAll();
       return View();
     }
   }

@@ -8,48 +8,48 @@ namespace CdOrganizer.Controllers
   public class RecordsController : Controller
   {
 
-    [HttpGet("/categories")]
+    [HttpGet("/records")]
     public ActionResult Index()
     {
-      List<Category> allCategories = Category.GetAll();
-      return View(allCategories);
+      List<Record> allRecords = Record.GetAll();
+      return View(allRecords);
     }
 
-    [HttpGet("/categories/new")]
+    [HttpGet("/records/new")]
     public ActionResult New()
     {
       return View();
     }
 
-    [HttpPost("/categories")]
-    public ActionResult Create(string categoryName)
+    [HttpPost("/records")]
+    public ActionResult Create(string recordName)
     {
-      Category newCategory = new Category(categoryName);
+      Record newRecord = new Record(recordName);
       return RedirectToAction("Index");
     }
 
-    [HttpGet("/categories/{id}")]
+    [HttpGet("/records/{id}")]
     public ActionResult Show(int id)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
-      Category selectedCategory = Category.Find(id);
-      List<Item> categoryItems = selectedCategory.Items;
-      model.Add("category", selectedCategory);
-      model.Add("items", categoryItems);
+      Record selectedRecord = Record.Find(id);
+      List<Song> recordSongs = selectedRecord.Songs;
+      model.Add("record", selectedRecord);
+      model.Add("songs", recordSongs);
       return View(model);
     }
 
-    // This one creates new Items within a given Category, not new Categories:
-    [HttpPost("/categories/{categoryId}/items")]
-    public ActionResult Create(int categoryId, string itemDescription)
+    // This one creates new Songs within a given Record, not new Records:
+    [HttpPost("/records/{recordId}/songs")]
+    public ActionResult Create(int recordId, string songDescription)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
-      Category foundCategory = Category.Find(categoryId);
-      Item newItem = new Item(itemDescription);
-      foundCategory.AddItem(newItem);
-      List<Item> categoryItems = foundCategory.Items;
-      model.Add("items", categoryItems);
-      model.Add("category", foundCategory);
+      Record foundRecord = Record.Find(recordId);
+      Song newSong = new Song(songDescription);
+      foundRecord.AddSong(newSong);
+      List<Song> RecordSongs = foundRecord.Songs;
+      model.Add("songs", recordSongs);
+      model.Add("record", foundRecord);
       return View("Show", model);
     }
 

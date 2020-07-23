@@ -1,7 +1,7 @@
-<h1>To Do List Item Details: </h1>
+<h1>Song Details: </h1>
 
-<h2>@Model["item"].Description</h2>
-<h3>Category: @Model["category"].Name</h3>
+<h2>@Model["song"].Description</h2>
+<h3>Record: @Model["record"].Name</h3>
 
-<a href='/categories/@Model["category"].Id/items/new'>Add another item</a>
-<a href='/categories'>View all items</a>
+<a href='/records/@Model["record"].Id/songs/new'>Add another song</a>
+<a href='/records'>View all songs</a>

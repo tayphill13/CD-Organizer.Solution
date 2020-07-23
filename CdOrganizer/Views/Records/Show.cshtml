@@ -1,14 +1,14 @@
 @using CdOrganizer.Models;
 
-<h3>Here are all the items in this category:</h3>
+<h3>Here are all the songs in this record:</h3>
 
 <ol>
-@foreach (Item item in @Model["items"])
+@foreach (Song song in @Model["songs"])
 {
-  <li><a href='/categories/@Model["category"].Id/items/@item.Id'>@item.Description</a></li>
+  <li><a href='/records/@Model["record"].Id/songs/@song.Id'>@song.Description</a></li>
 }
 </ol>
 
-<p><a href='/categories/@Model["category"].Id/items/new'>Add a new item</a></p>
-<p><a href='/categories'>Return to category list</a></p>
+<p><a href='/records/@Model["record"].Id/songs/new'>Add a new song</a></p>
+<p><a href='/records'>Return to records list</a></p>
 <p><a href='/'>Return to Main Page</a></p>

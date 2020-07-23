@@ -4,17 +4,17 @@ namespace CdOrganizer.Models
 {
   public class Record
   {
-    private static List<Category> _instances = new List<Category> {};
+    private static List<Record> _instances = new List<Record> {};
     public string Name { get; set; }
     public int Id { get; }
-    public List<Item> Items { get; set; }
+    public List<Song> Songs { get; set; }
 
-    public Category(string categoryName)
+    public Record(string RecordName)
     {
-      Name = categoryName;
+      Name = RecordName;
       _instances.Add(this);
       Id = _instances.Count;
-      Items = new List<Item>{};
+      Songs = new List<Song>{};
     }
 
     public static void ClearAll()
@@ -22,19 +22,19 @@ namespace CdOrganizer.Models
       _instances.Clear();
     }
 
-    public static List<Category> GetAll()
+    public static List<Record> GetAll()
     {
       return _instances;
     }
 
-    public static Category Find(int searchId)
+    public static Record Find(int searchId)
     {
       return _instances[searchId-1];
     }
 
-    public void AddItem(Item item)
+    public void AddSong(Song song)
     {
-      Items.Add(item);
+      Songs.Add(song);
     }
   }
 }
