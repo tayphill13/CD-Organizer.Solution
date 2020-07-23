@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace CdOrganizer.Models
 {
-  public class Category
+  public class Record
   {
     private static List<Category> _instances = new List<Category> {};
     public string Name { get; set; }

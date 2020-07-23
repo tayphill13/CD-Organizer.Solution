@@ -3,7 +3,7 @@ using System.Collections.Generic;
 namespace CdOrganizer.Models
 
 {
-  public class Item
+  public class Song
   {
     public string Description { get; set; }
     public int Id { get; }

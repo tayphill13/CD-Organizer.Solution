@@ -5,7 +5,7 @@ using CdOrganizer.Models;
 
 namespace CdOrganizer.Controllers
 {
-  public class CategoriesController : Controller
+  public class RecordsController : Controller
   {
 
     [HttpGet("/categories")]

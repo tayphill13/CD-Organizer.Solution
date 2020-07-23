@@ -12,7 +12,9 @@ _{This is a detailed description of your application. Its purpose and usage.  Gi
 
 | Spec | Input | Output |
 | :--- | :---: | ---: |
-
+| User is able to add a new record to the organizer with Record title  |   |       |
+| User can add a song to that record  |     |       |
+ 
 
 ## Setup/Installation Requirements
 

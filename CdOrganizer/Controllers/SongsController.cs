@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace CdOrganizer.Controllers
 {
-  public class ItemsController : Controller
+  public class SongsController : Controller
   {
 
     [HttpGet("/categories/{categoryId}/items/new")]
