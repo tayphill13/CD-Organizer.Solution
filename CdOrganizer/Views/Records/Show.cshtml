@@ -1,6 +1,6 @@
 @using CdOrganizer.Models;
 
-<h3>Here are all the songs in this record:</h3>
+<h3>Here are all the songs in @Model["record"].Name</h3>
 
 <ol>
 @foreach (Song song in @Model["songs"])

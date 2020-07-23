@@ -41,11 +41,11 @@ namespace CdOrganizer.Controllers
 
     // This one creates new Songs within a given Record, not new Records:
     [HttpPost("/records/{recordId}/songs")]
-    public ActionResult Create(int recordId, string songDescription)
+    public ActionResult Create(int recordId, string songDescription, string songLyrics)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
       Record foundRecord = Record.Find(recordId);
-      Song newSong = new Song(songDescription);
+      Song newSong = new Song(songDescription, songLyrics);
       foundRecord.AddSong(newSong);
       List<Song> recordSongs = foundRecord.Songs;
       model.Add("songs", recordSongs);

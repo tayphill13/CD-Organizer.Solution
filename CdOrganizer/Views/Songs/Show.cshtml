@@ -1,7 +1,9 @@
 <h1>Song Details: </h1>
 
 <h2>@Model["song"].Description</h2>
+<h4>Song lyrics: @Model["song"].SongLyrics</h4>
 <h3>Record: @Model["record"].Name</h3>
 
+
 <a href='/records/@Model["record"].Id/songs/new'>Add another song</a>
-<a href='/records'>View all songs</a>
+<a href='/records/@Model["record"].Id'>View all songs</a>

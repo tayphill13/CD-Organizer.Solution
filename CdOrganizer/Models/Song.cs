@@ -6,12 +6,14 @@ namespace CdOrganizer.Models
   public class Song
   {
     public string Description { get; set; }
+    public string SongLyrics { get; set; }
     public int Id { get; }
     private static List<Song> _instances = new List<Song> { };
 
-    public Song(string description)
+    public Song(string description, string songLyrics)
     {
       Description = description;
+      SongLyrics = songLyrics;
       _instances.Add(this);
       Id = _instances.Count;
     }
