@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 
-namespace ToDoList.Models
+namespace CdOrganizer.Models
+
 {
   public class Item
   {

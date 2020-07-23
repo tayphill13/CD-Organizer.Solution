@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System;
 using Microsoft.AspNetCore.Mvc;
-using ToDoList.Models;
+using CdOrganizer.Models;
 
-namespace ToDoList.Controllers
+namespace CdOrganizer.Controllers
 {
   public class CategoriesController : Controller
   {

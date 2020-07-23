@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
-using ToDoList.Models;
+using CdOrganizer.Models;
 using System.Collections.Generic;
 
-namespace ToDoList.Controllers
+namespace CdOrganizer.Controllers
 {
   public class ItemsController : Controller
   {
