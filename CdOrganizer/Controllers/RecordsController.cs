@@ -47,7 +47,7 @@ namespace CdOrganizer.Controllers
       Record foundRecord = Record.Find(recordId);
       Song newSong = new Song(songDescription);
       foundRecord.AddSong(newSong);
-      List<Song> RecordSongs = foundRecord.Songs;
+      List<Song> recordSongs = foundRecord.Songs;
       model.Add("songs", recordSongs);
       model.Add("record", foundRecord);
       return View("Show", model);

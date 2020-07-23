@@ -38,7 +38,7 @@ namespace CdOrganizer
 
         app.Run(async (context) =>
         {
-          await context.Response.WriteAsync("Something went wrong!");
+          await context.Response.WriteAsync("Sorry, we could not find the page you are looking for!");
         });
 
     }

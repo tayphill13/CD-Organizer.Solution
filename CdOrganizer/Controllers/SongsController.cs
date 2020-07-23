@@ -10,14 +10,14 @@ namespace CdOrganizer.Controllers
     [HttpGet("/records/{recordId}/songs/new")]
     public ActionResult New(int recordId)
     {
-      Record record = Record.Find(RecordId);
+      Record record = Record.Find(recordId);
       return View(record);
     }
 
     [HttpGet("/records/{recordId}/songs/{songId}")]
     public ActionResult Show(int recordId, int songId)
     {
-      Song song = Song.Find(song);
+      Song song = Song.Find(songId);
       Record record = Record.Find(recordId);
       Dictionary<string, object> model = new Dictionary<string, object>();
       model.Add("song", song);
